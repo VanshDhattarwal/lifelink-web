@@ -1,0 +1,160 @@
+/* ===========================
+   Google Font
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:40px 20px;
+}
+
+/* ===========================
+   Form Container
+=========================== */
+
+.donor-form{
+    width:100%;
+    max-width:850px;
+    background:#fff;
+    padding:45px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+/* ===========================
+   Heading
+=========================== */
+
+.donor-form h1{
+    font-size:2.3rem;
+    color:#d32f2f;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.donor-form p{
+    text-align:center;
+    color:#666;
+    margin-bottom:35px;
+    font-size:16px;
+}
+
+/* ===========================
+   Section Heading
+=========================== */
+
+form h2{
+    margin-top:35px;
+    margin-bottom:18px;
+    color:#d32f2f;
+    font-size:1.4rem;
+    border-left:5px solid #d32f2f;
+    padding-left:12px;
+}
+
+/* ===========================
+   Labels
+=========================== */
+
+label{
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+    font-weight:500;
+    color:#333;
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+input,
+select{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+    transition:.3s;
+    background:#fff;
+}
+
+input:focus,
+select:focus{
+    border-color:#d32f2f;
+    box-shadow:0 0 0 4px rgba(211,47,47,.12);
+}
+
+/* ===========================
+   Radio Buttons
+=========================== */
+
+input[type="radio"]{
+    width:auto;
+    margin-right:8px;
+}
+
+input[type="checkbox"]{
+    width:auto;
+    margin-right:10px;
+}
+
+/* ===========================
+   Button
+=========================== */
+
+button{
+    width:100%;
+    margin-top:35px;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:#d32f2f;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#b71c1c;
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(211,47,47,.3);
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+    .donor-form{
+        padding:25px;
+    }
+
+    .donor-form h1{
+        font-size:2rem;
+    }
+
+    form h2{
+        font-size:1.2rem;
+    }
+
+    button{
+        font-size:16px;
+    }
+
+}

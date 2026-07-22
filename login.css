@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:100vh;
+
+    background:linear-gradient(135deg,#fff5f5,#ffe8e8,#ffdcdc);
+
+    padding:20px;
+
+}
+
+.login-box{
+
+    width:100%;
+    max-width:420px;
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+}
+
+.login-box h1{
+
+    text-align:center;
+
+    color:#d62828;
+
+    margin-bottom:10px;
+
+}
+
+.login-box p{
+
+    text-align:center;
+
+    color:#666;
+
+    margin-bottom:30px;
+
+}
+
+label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:500;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    margin-bottom:20px;
+
+    outline:none;
+
+}
+
+input:focus{
+
+    border-color:#d62828;
+
+}
+
+.options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+
+}
+
+.options label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    margin:0;
+
+}
+
+.options input{
+
+    width:auto;
+
+    margin:0;
+
+}
+
+.options a{
+
+    text-decoration:none;
+
+    color:#d62828;
+
+    font-weight:500;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#d62828;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:#b91c1c;
+
+}
+
+.register{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:#666;
+
+}
+
+.register a{
+
+    text-decoration:none;
+
+    color:#d62828;
+
+    font-weight:600;
+
+}
+
+@media(max-width:480px){
+
+.login-box{
+
+padding:25px;
+
+}
+
+.options{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:10px;
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   Blood Background Animation
+=========================== */
+
+body{
+    position:relative;
+    overflow-x:hidden;
+}
+
+.blood-bg{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+
+
+
+
+
+
+/* Animation */
+
+@keyframes floatBlood{
+
+0%{
+
+transform:translateY(110vh) rotate(45deg);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:.15;
+
+}
+
+90%{
+
+opacity:.15;
+
+}
+
+100%{
+
+transform:translateY(-150px) rotate(45deg);
+
+opacity:0;
+
+}
+
+}
+
+/* Keep Login Above Animation */
+
+.login-box{
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================
+      ECG Animation
+========================== */
+
+.ecg-container{
+
+    position:absolute;
+
+    top:8%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+
+    pointer-events:none;
+
+    opacity:.25;
+
+}
+
+.ecg-container svg{
+
+    width:100%;
+
+    height:90px;
+
+}
+
+.ecg-line{
+
+    fill:none;
+
+    stroke:#d62828;
+
+    stroke-width:4;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    stroke-dasharray:1500;
+
+    stroke-dashoffset:1500;
+
+    animation:heartbeat 4s linear infinite;
+
+}
+
+@keyframes heartbeat {
+
+    0% {
+        stroke-dashoffset: 1500;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+
+}
+
+.login-box{
+
+    width:100%;
+    max-width:450px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.08);
+
+    overflow:hidden;
+}
+
+ 
+/*==========================
+      LifeLink Logo
+===========================*/
+
+.login-logo{
+
+text-align:center;
+
+margin-bottom:20px;
+
+}
+
+.logo-circle{
+
+width:80px;
+
+height:80px;
+
+background:linear-gradient(135deg,#ff4b5c,#d62828);
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin:auto;
+
+font-size:36px;
+
+color:white;
+
+box-shadow:0 10px 25px rgba(214,40,40,.30);
+
+animation:logoFloat 4s ease-in-out infinite;
+
+}
+
+.login-logo h2{
+
+margin-top:18px;
+
+font-size:30px;
+
+color:#d62828;
+
+}
+
+.login-logo span{
+
+display:block;
+
+margin-top:6px;
+
+color:#777;
+
+font-size:14px;
+
+letter-spacing:.5px;
+
+}
+
+@keyframes logoFloat{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+
+
+.welcome{
+
+margin-top:25px;
+
+font-size:34px;
+
+font-weight:700;
+
+color:#222;
+
+text-align:center;
+
+}
+
+
+
+.subtitle{
+
+text-align:center;
+
+line-height:28px;
+
+font-size:15px;
+
+margin-bottom:30px;
+
+color:#666;
+
+}
+
+
+/*========================================
+        Premium Input Boxes
+========================================*/
+
+.input-box{
+
+    position:relative;
+
+    margin-bottom:22px;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    padding:15px 18px 15px 50px;
+
+    border:2px solid #ececec;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    transition:.35s;
+
+    background:white;
+
+}
+
+.input-box input:focus{
+
+    border-color:#d62828;
+
+    box-shadow:0 0 15px rgba(214,40,40,.15);
+
+}
+
+.input-icon{
+
+    position:absolute;
+
+    left:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:18px;
+
+    color:#d62828;
+
+}
+
+
+/*========================================
+            Login Button
+========================================*/
+
+.login-btn{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(135deg,#ff4b5c,#d62828);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 10px 20px rgba(214,40,40,.25);
+
+}
+
+
+/*========================================
+         Secure Login Badge
+========================================*/
+
+.security-badge{
+
+    margin-top:22px;
+
+    background:#fff7f7;
+
+    border:1px solid #ffd3d3;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:-250px;
+
+left:-250px;
+
+width:500px;
+
+height:500px;
+
+background:#ff4b5c;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+opacity:.15;
+
+z-index:-1;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+bottom:-250px;
+
+right:-250px;
+
+width:500px;
+
+height:500px;
+
+background:#d62828;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+opacity:.12;
+
+z-index:-1;
+
+}
+
+
+.login-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+
+0 18px 40px rgba(214,40,40,.45);
+
+letter-spacing:1px;
+
+}
+
+
+
+
+@keyframes borderGlow{
+
+    0%{
+        filter:hue-rotate(0deg);
+    }
+
+    100%{
+        filter:hue-rotate(360deg);
+    }
+
+}

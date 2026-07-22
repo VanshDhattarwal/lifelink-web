@@ -1,0 +1,149 @@
+select{
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+}
+
+select::focus{
+    border-color: #e63946;
+    box-shadow: 0 0 8px rgba(230, 57, 70, 0.3);
+}
+
+body{
+    background: #f5f7fb;
+    font-family: Arial , Arial, Helvetica, sans-serif;
+}
+
+form{
+
+    width: 700px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+}
+
+h2{
+    color:#d62828;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+h3{
+    color:#222;
+    border-left:5px solid #d62828;
+    padding-left:10px;
+    margin-top:30px;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    margin-bottom:20px;
+    border:2px solid #ddd;
+    border-radius:8px;
+    font-size:16px;
+    box-sizing:border-box;
+    transition:.3s;
+}
+
+input:focus,
+select:focus{
+    border-color:#d62828;
+    box-shadow:0 0 10px rgba(214,40,40,.2);
+    outline:none;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#d62828;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#b71c1c;
+    transform:translateY(-3px);
+}
+
+label{
+    font-weight:600;
+    color:#444;
+}
+
+section{
+    margin-bottom:35px;
+}
+
+
+.radio-group{
+    display:flex;
+    gap:30px;
+    margin-top:15px;
+}
+
+.radio-group label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+}
+
+.radio-group input{
+    width:auto;
+    margin:0;
+}
+
+
+
+
+
+.availability-section{
+    margin-top:30px;
+}
+
+.availability-option{
+    display:block;
+    padding:15px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    margin:15px 0;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.availability-option:hover{
+    border-color:#e63946;
+    background:#fff5f5;
+}
+
+.availability-option input{
+    width:auto;
+    margin-right:10px;
+}
+
+.availability-option strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.availability-option small{
+    color:#666;
+    line-height:1.5;
+}
