@@ -1656,3 +1656,48 @@ max-width:360px;
     background:#b00020;
     border-color:#b00020;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.lifelink-ai-button {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 13px 20px;
+
+    background: #e63946;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+
+    box-shadow: 0 10px 30px rgba(230, 57, 70, 0.30);
+
+    transition: 0.3s;
+}
+
+.ai-button-icon {
+    font-size: 20px;
+}
+
+.lifelink-ai-button:hover {
+    transform: translateY(-4px);
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>LifeLink AI Assistant</title>
+
+    <link rel="stylesheet"
+        href="ai-assistant.css">
+
+</head>
+
+<body>
+
+    <header class="ai-navbar">
+
+        <div class="logo">
+            <span>♥</span>
+            Life<span>Link</span>
+        </div>
+
+        <a href="index.html"
+            class="back-button">
+
+            ← Back to LifeLink
+
+        </a>
+
+    </header>
+
+
+    <main class="ai-page">
+
+        <section class="ai-container">
+
+            <!-- AI HEADER -->
+
+            <div class="ai-header">
+
+                <div class="ai-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h1>
+                        LifeLink AI Assistant
+                    </h1>
+
+                    <p>
+                        Your emergency blood & hospital assistant
+                    </p>
+
+                </div>
+
+                <div class="online">
+
+                    <span></span>
+
+                    Online
+
+                </div>
+
+            </div>
+
+
+            <!-- CHAT AREA -->
+
+            <div
+                id="chatBox"
+                class="chat-box"
+            >
+
+                <div class="message ai-message">
+
+                    <div class="message-icon">
+                        🤖
+                    </div>
+
+                    <div class="message-content">
+
+                        <strong>
+                            LifeLink AI
+                        </strong>
+
+                        <p>
+                            Namaste! 👋
+                        </p>
+
+                        <p>
+                            I can help you find nearby hospitals,
+                            check blood availability and give
+                            directions.
+                        </p>
+
+                        <p>
+                            Aap Hindi, English ya Hinglish
+                            mein baat kar sakte hain.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="quick-actions">
+
+                    <button onclick="quickMessage('Find nearby hospitals')">
+
+                        🏥 Find Hospitals
+
+                    </button>
+
+                    <button onclick="quickMessage('Find O+ blood')">
+
+                        🩸 Find Blood
+
+                    </button>
+
+                    <button onclick="quickMessage('Give me directions')">
+
+                        🗺️ Directions
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- INPUT -->
+
+            <div class="input-area">
+
+                <button
+                    id="micButton"
+                    class="mic-button"
+                    onclick="startVoice()"
+                >
+
+                    🎙️
+
+                </button>
+
+
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Type your message..."
+                    autocomplete="off"
+                >
+
+
+                <button
+                    class="send-button"
+                    onclick="sendMessage()"
+                >
+
+                    ➤
+
+                </button>
+
+            </div>
+
+
+            <!-- LANGUAGE -->
+
+            <div class="language-selector">
+
+                <span>
+                    Language:
+                </span>
+
+                <button
+                    onclick="setLanguage('english')"
+                >
+                    English
+                </button>
+
+                <button
+                    onclick="setLanguage('hindi')"
+                >
+                    हिंदी
+                </button>
+
+                <button
+                    onclick="setLanguage('hinglish')"
+                >
+                    Hinglish
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="ai-assistant.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,941 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #ffffff;
+
+    color: #172033;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+
+    height: 92px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eeeeee;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #ed3347;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+
+.logo span {
+
+    font-size: 30px;
+
+}
+
+
+.navbar nav {
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+
+.navbar nav a {
+
+    text-decoration: none;
+
+    color: #172033;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+
+.navbar nav a:hover,
+.navbar nav .active {
+
+    color: #ed3347;
+
+}
+
+
+.nav-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+
+.login,
+.register {
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+}
+
+
+.login {
+
+    color: #ed3347;
+
+    border: 1px solid #ed3347;
+
+}
+
+
+.register {
+
+    background: #e9002b;
+
+    color: white;
+
+}
+
+
+/* ================= HERO ================= */
+
+.hospital-hero {
+
+    padding: 90px 7% 80px;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 30%,
+            #ffdadd,
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff5f6
+        );
+
+}
+
+
+.hero-content {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+
+}
+
+
+.eyebrow {
+
+    color: #ed3347;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: clamp(45px, 6vw, 70px);
+
+    line-height: 1.05;
+
+    margin: 20px 0;
+
+}
+
+
+.hero-content h1 span {
+
+    color: #ed3347;
+
+}
+
+
+.hero-content p {
+
+    color: #6f7786;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+}
+
+
+/* ================= LOCATION ================= */
+
+.location-box {
+
+    max-width: 650px;
+
+    margin: 35px auto 0;
+
+    padding: 14px;
+
+    background: white;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: left;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.07);
+
+}
+
+
+.location-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    background: #fff0f2;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 21px;
+
+}
+
+
+.location-info {
+
+    flex: 1;
+
+}
+
+
+.location-info strong {
+
+    font-size: 14px;
+
+}
+
+
+.location-info p {
+
+    margin-top: 4px;
+
+    font-size: 13px;
+
+    color: #777f8e;
+
+}
+
+
+.location-box button {
+
+    border: none;
+
+    background: #ed3347;
+
+    color: white;
+
+    padding: 11px 18px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-area {
+
+    padding: 25px 7%;
+
+    border-bottom: 1px solid #eeeeee;
+
+}
+
+
+.search-container {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+
+.search-box {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: #f8f8f9;
+
+    padding: 14px 18px;
+
+    border-radius: 12px;
+
+    border: 1px solid #eeeeee;
+
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 15px;
+
+}
+
+
+#bloodFilter {
+
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    padding: 0 15px;
+
+    background: white;
+
+    font-weight: 600;
+
+}
+
+
+.emergency-button {
+
+    border: none;
+
+    background: #fff0f2;
+
+    color: #e9002b;
+
+    border: 1px solid #ffd0d5;
+
+    border-radius: 10px;
+
+    padding: 0 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+/* ================= RANGE ================= */
+
+.hospital-range {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 70px 20px 20px;
+
+}
+
+
+.range-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 30px;
+
+}
+
+
+.range-heading span:first-child {
+
+    color: #ed3347;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.range-heading h2 {
+
+    font-size: 34px;
+
+    margin: 8px 0;
+
+}
+
+
+.range-heading p {
+
+    color: #7b8290;
+
+}
+
+
+.range-badge {
+
+    background: #fff0f2;
+
+    color: #ed3347;
+
+    padding: 9px 15px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+/* ================= GRID ================= */
+
+.hospital-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+
+}
+
+
+/* ================= CARD ================= */
+
+.hospital-card {
+
+    background: white;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 35px rgba(20,25,40,0.07);
+
+    transition: 0.3s;
+
+}
+
+
+.hospital-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 45px rgba(20,25,40,0.12);
+
+}
+
+
+/* ================= IMAGE ================= */
+
+.hospital-image {
+
+    height: 190px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    position: relative;
+
+}
+
+
+.verified {
+
+    position: absolute;
+
+    top: 14px;
+
+    left: 14px;
+
+    background: white;
+
+    color: #159447;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+.emergency {
+
+    position: absolute;
+
+    top: 14px;
+
+    right: 14px;
+
+    background: #ed3347;
+
+    color: white;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+/* ================= CONTENT ================= */
+
+.hospital-content {
+
+    padding: 22px;
+
+}
+
+
+.hospital-content h3 {
+
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    margin-bottom: 7px;
+
+}
+
+
+.type {
+
+    color: #7b8290;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.meta {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 15px;
+
+}
+
+
+.meta span {
+
+    background: #f7f7f8;
+
+    padding: 7px 9px;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.rating {
+
+    color: #df9700;
+
+}
+
+
+.distance {
+
+    color: #ed3347;
+
+}
+
+
+.address {
+
+    color: #6e7685;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* ================= BLOOD ================= */
+
+.blood-title {
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    margin-bottom: 9px;
+
+}
+
+
+.blood-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.blood {
+
+    padding: 6px 9px;
+
+    background: #fff0f2;
+
+    color: #d90028;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+/* ================= CARD BUTTON ================= */
+
+.details-button {
+
+    width: 100%;
+
+    border: none;
+
+    background: #ed3347;
+
+    color: white;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.details-button:hover {
+
+    background: #d91f34;
+
+}
+
+
+/* ================= EMERGENCY ================= */
+
+.emergency-banner {
+
+    max-width: 1200px;
+
+    margin: 80px auto;
+
+    padding: 50px;
+
+    border-radius: 25px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff0f2,
+            #ffffff
+        );
+
+    border: 1px solid #ffe0e4;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.emergency-banner span {
+
+    color: #ed3347;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.emergency-banner h2 {
+
+    font-size: 35px;
+
+    margin: 10px 0;
+
+}
+
+
+.emergency-banner p {
+
+    color: #707887;
+
+}
+
+
+.emergency-banner button {
+
+    border: none;
+
+    background: #ed3347;
+
+    color: white;
+
+    padding: 14px 23px;
+
+    border-radius: 10px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    background: #172033;
+
+    color: white;
+
+    padding: 50px;
+
+    text-align: center;
+
+}
+
+
+.footer-logo {
+
+    color: #ff4054;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    margin-bottom: 10px;
+
+}
+
+
+footer p {
+
+    color: #adb4c1;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 950px) {
+
+    .navbar nav {
+
+        display: none;
+
+    }
+
+
+    .hospital-grid {
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+
+    .search-container {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    #bloodFilter,
+    .emergency-button {
+
+        height: 50px;
+
+    }
+
+}
+
+
+@media(max-width: 650px) {
+
+    .hospital-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .location-box {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .location-box button {
+
+        width: 100%;
+
+    }
+
+
+    .range-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+    .emergency-banner {
+
+        margin: 50px 20px;
+
+        padding: 30px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+
+    }
+
+}

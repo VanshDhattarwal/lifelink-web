@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>LifeLink | Nearby Hospitals</title>
+
+    <link rel="stylesheet"
+          href="hospitals.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <span>♥</span>
+        LifeLink
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="howitwork.html">How It Works</a>
+
+        <a class="active"
+           href="hospitals.html">
+            Hospitals
+        </a>
+
+        <a href="becadonor.html">Donors</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+
+    <div class="nav-buttons">
+
+        <a href="login.html" class="login">
+            Login
+        </a>
+
+        <a href="register.html" class="register">
+            Register
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hospital-hero">
+
+    <div class="hero-content">
+
+        <span class="eyebrow">
+            LIFELINK HOSPITAL NETWORK
+        </span>
+
+
+        <h1>
+            Find Hospitals
+            <span>Near You.</span>
+        </h1>
+
+
+        <p>
+            Discover nearby hospitals, emergency centres
+            and blood facilities within 20 km.
+        </p>
+
+
+        <div class="location-box">
+
+            <div class="location-icon">
+                📍
+            </div>
+
+
+            <div class="location-info">
+
+                <strong>
+                    Your Location
+                </strong>
+
+                <p id="locationText">
+                    Ghaziabad, Uttar Pradesh
+                </p>
+
+            </div>
+
+
+            <button onclick="detectLocation()">
+                Use My Location
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search-area">
+
+    <div class="search-container">
+
+
+        <div class="search-box">
+
+            <span>🔎</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search hospital or area..."
+                onkeyup="searchHospitals()"
+            >
+
+        </div>
+
+
+        <select
+            id="bloodFilter"
+            onchange="searchHospitals()">
+
+            <option value="all">
+                All Blood Groups
+            </option>
+
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+
+        </select>
+
+
+        <button
+            class="emergency-button"
+            onclick="showEmergency()">
+
+            🚑 Emergency Hospitals
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     0–5 KM
+===================================================== -->
+
+<section class="hospital-range">
+
+    <div class="range-heading">
+
+        <div>
+
+            <span>
+                NEAREST HOSPITALS
+            </span>
+
+            <h2>
+                Within 5 km
+            </h2>
+
+            <p>
+                Hospitals closest to your location
+            </p>
+
+        </div>
+
+        <span class="range-badge">
+            0–5 KM
+        </span>
+
+    </div>
+
+
+    <div
+        class="hospital-grid"
+        id="range-5">
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     5–10 KM
+===================================================== -->
+
+<section class="hospital-range">
+
+    <div class="range-heading">
+
+        <div>
+
+            <span>
+                NEARBY HOSPITALS
+            </span>
+
+            <h2>
+                Within 5–10 km
+            </h2>
+
+            <p>
+                More hospitals available nearby
+            </p>
+
+        </div>
+
+        <span class="range-badge">
+            5–10 KM
+        </span>
+
+    </div>
+
+
+    <div
+        class="hospital-grid"
+        id="range-10">
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     10–20 KM
+===================================================== -->
+
+<section class="hospital-range">
+
+    <div class="range-heading">
+
+        <div>
+
+            <span>
+                EXTENDED NETWORK
+            </span>
+
+            <h2>
+                Within 10–20 km
+            </h2>
+
+            <p>
+                Additional hospitals within emergency reach
+            </p>
+
+        </div>
+
+        <span class="range-badge">
+            10–20 KM
+        </span>
+
+    </div>
+
+
+    <div
+        class="hospital-grid"
+        id="range-20">
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EMERGENCY ================= -->
+
+<section class="emergency-banner">
+
+    <div>
+
+        <span>
+            🚑 EMERGENCY SUPPORT
+        </span>
+
+        <h2>
+            Need blood urgently?
+        </h2>
+
+        <p>
+            Find hospitals and blood centres near your
+            current location.
+        </p>
+
+    </div>
+
+
+    <button onclick="showEmergency()">
+
+        Find Emergency Hospitals →
+
+    </button>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        ♥ LifeLink
+    </div>
+
+    <p>
+        Connecting donors with patients in seconds.
+    </p>
+
+    <small>
+        © 2026 LifeLink
+    </small>
+
+</footer>
+
+
+<script src="hospitals.js"></script>
+
+</body>
+
+</html>
