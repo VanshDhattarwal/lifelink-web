@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emergency SOS | LifeLink</title>
+
+    <link rel="stylesheet" href="sos.css">
+</head>
+
+<body>
+
+    
+
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            🩸 LifeLink
+        </a>
+
+        <a href="index.html" class="back-btn">
+            ← Back to Home
+        </a>
+
+    </nav>
+
+
+    <main class="sos-container">
+
+
+        <section class="sos-hero">
+
+            <div class="sos-icon">
+                🚨
+            </div>
+
+            <h1>Emergency SOS Mode</h1>
+
+            <p>
+                Create an urgent blood request and help identify
+                potentially compatible nearby registered donors.
+            </p>
+
+        </section>
+
+
+        <!-- BIG SOS BUTTON -->
+
+        <section class="sos-button-section">
+
+            <button id="startSOS" class="sos-button">
+
+                🚨
+
+                <span>EMERGENCY BLOOD REQUEST</span>
+
+                <small>Tap to activate SOS Mode</small>
+
+            </button>
+
+        </section>
+
+
+        <!-- SOS FORM -->
+
+        <section id="sosFormSection" class="sos-form-section hidden">
+
+            <div class="form-card">
+
+                <h2>🚨 Create Emergency SOS</h2>
+
+                <p>
+                    Provide the emergency details.
+                </p>
+
+
+                <!-- BLOOD GROUP -->
+
+                <div class="form-group">
+
+                    <label>🩸 Blood Group Required</label>
+
+                    <select id="bloodGroup">
+
+                        <option value="">
+                            Select Blood Group
+                        </option>
+
+                        <option>A+</option>
+                        <option>A-</option>
+
+                        <option>B+</option>
+                        <option>B-</option>
+
+                        <option>AB+</option>
+                        <option>AB-</option>
+
+                        <option>O+</option>
+                        <option>O-</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="form-group">
+
+                    <label>📍 Emergency Location</label>
+
+                    <button
+                        type="button"
+                        id="getLocation"
+                        class="location-btn"
+                    >
+
+                        📍 Get My Current Location
+
+                    </button>
+
+                    <p id="locationStatus">
+
+                        Location not selected
+
+                    </p>
+
+                </div>
+
+
+                <!-- HOSPITAL -->
+
+                <div class="form-group">
+
+                    <label>🏥 Hospital Name</label>
+
+                    <input
+                        type="text"
+                        id="hospital"
+                        placeholder="Enter hospital name"
+                    >
+
+                </div>
+
+
+                <!-- URGENCY -->
+
+                <div class="form-group">
+
+                    <label>🚨 Emergency Level</label>
+
+                    <div class="urgency-options">
+
+
+                        <label class="urgency critical">
+
+                            <input
+                                type="radio"
+                                name="urgency"
+                                value="Critical"
+                            >
+
+                            🔴 Critical
+
+                            <small>
+                                Required immediately
+                            </small>
+
+                        </label>
+
+
+                        <label class="urgency urgent">
+
+                            <input
+                                type="radio"
+                                name="urgency"
+                                value="Urgent"
+                            >
+
+                            🟠 Urgent
+
+                            <small>
+                                Required soon
+                            </small>
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="activateSOS"
+                    class="activate-btn"
+                >
+
+                    🚨 ACTIVATE EMERGENCY SOS
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOS RESULT -->
+
+        <section
+            id="sosResult"
+            class="sos-result hidden"
+        >
+
+            <div class="alert-card">
+
+                <div class="live-alert">
+
+                    🔴 LIVE SOS ALERT
+
+                </div>
+
+
+                <h2>
+                    Emergency Blood Request Activated
+                </h2>
+
+
+                <div class="result-details">
+
+                    <div>
+
+                        🩸 Blood Required
+
+                        <strong id="resultBlood"></strong>
+
+                    </div>
+
+
+                    <div>
+
+                        🏥 Hospital
+
+                        <strong id="resultHospital"></strong>
+
+                    </div>
+
+
+                    <div>
+
+                        🚨 Urgency
+
+                        <strong id="resultUrgency"></strong>
+
+                    </div>
+
+
+                    <div>
+
+                        📍 Location
+
+                        <strong id="resultLocation"></strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DONOR MATCHING -->
+
+                <div class="matching-box">
+
+                    <h3>
+                        🤖 LifeLink Emergency Matching
+                    </h3>
+
+                    <p id="matchingStatus">
+
+                        Searching for potentially compatible nearby donors...
+
+                    </p>
+
+
+                    <div
+                        id="donorResults"
+                        class="donor-results"
+                    ></div>
+
+                </div>
+
+
+                <!-- ALERT STATUS -->
+
+                <div class="alert-status">
+
+                    <h3>🔔 Emergency Alert Status</h3>
+
+                    <p id="alertStatus">
+
+                        Preparing emergency alert...
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="sos.js"></script>
+
+</body>
+</html>
+
