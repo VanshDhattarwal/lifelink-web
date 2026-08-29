@@ -94,8 +94,11 @@ async function sendMessage() {
             data.reply;
 
 
-        // Show AI response
-        addAIMessage(reply);
+    // Show AI response
+addAIMessage(reply);
+
+// Make LifeLink AI speak
+speakAI(reply);
 
 
         // Save AI response
