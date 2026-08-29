@@ -10,14 +10,12 @@
 
 let currentLanguage = "english";
 
+let conversationHistory = [];
+
+
 let isSpeaking = false;
 
-
-/* ==========================================
-   SEND MESSAGE
-========================================== */
-
-function sendMessage() {
+async function sendMessage() {
 
     const input =
         document.getElementById("userInput");
@@ -31,29 +29,104 @@ function sendMessage() {
     }
 
 
-    // Show user's message
+    // Show user message
     addUserMessage(text);
+
+
+    // Save conversation
+    conversationHistory.push({
+        role: "user",
+        content: text
+    });
 
 
     // Clear input
     input.value = "";
 
 
-    // Show typing animation
+    // Show typing
     showTyping();
 
 
-    // Simulate AI thinking
-    setTimeout(function () {
+    try {
+
+        const response =
+            await fetch("/.netlify/functions/chat", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+
+                body: JSON.stringify({
+
+                    messages:
+                        conversationHistory
+
+                })
+
+            });
+
+
+        const data =
+            await response.json();
+
 
         removeTyping();
 
-        generateResponse(text);
 
-    }, 900);
+        if (!response.ok) {
+
+            addAIMessage(
+                "⚠️ Sorry, I'm having trouble connecting to the AI service. Please try again."
+            );
+
+            console.error(data);
+
+            return;
+
+        }
+
+
+        const reply =
+            data.reply;
+
+
+        // Show AI response
+        addAIMessage(reply);
+
+
+        // Save AI response
+        conversationHistory.push({
+            role: "assistant",
+            content: reply
+        });
+
+
+        // Keep memory manageable
+        if (conversationHistory.length > 20) {
+
+            conversationHistory =
+                conversationHistory.slice(-20);
+
+        }
+
+
+    } catch (error) {
+
+        removeTyping();
+
+        console.error(error);
+
+        addAIMessage(
+            "⚠️ Connection error. Please check your internet and try again."
+        );
+
+    }
 
 }
-
 
 /* ==========================================
    ENTER KEY
@@ -886,3 +959,18 @@ function escapeHTML(text) {
     return div.innerHTML;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
