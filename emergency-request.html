@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emergency Blood Request | LifeLink</title>
+
+    <link rel="stylesheet" href="emergency-request.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            🩸 LifeLink
+        </a>
+
+        <a href="index.html" class="back-btn">
+            ← Back to Home
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="emergency-hero">
+
+        <div class="hero-content">
+
+            <div class="emergency-icon">
+                🚨
+            </div>
+
+            <h1>Emergency Blood Request</h1>
+
+            <p>
+                Submit an emergency blood requirement and let LifeLink
+                organize the request information for donor matching.
+            </p>
+
+            <div class="warning-box">
+
+                ⚠️ For a life-threatening emergency, immediately contact
+                local emergency services and the nearest hospital.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN CONTAINER -->
+
+    <main class="main-container">
+
+
+        <!-- FORM -->
+
+        <section class="request-section">
+
+            <div class="section-header">
+
+                <span>🩸</span>
+
+                <div>
+                    <h2>Create Emergency Request</h2>
+
+                    <p>
+                        Provide accurate information to help organize
+                        the emergency request.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="emergencyForm">
+
+
+                <!-- BLOOD GROUP -->
+
+                <div class="form-group">
+
+                    <label for="bloodGroup">
+
+                        🩸 Blood Group Required
+
+                    </label>
+
+                    <select id="bloodGroup" required>
+
+                        <option value="">
+                            Select Blood Group
+                        </option>
+
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PATIENT NAME -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="patientName">
+
+                            👤 Patient Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="patientName"
+                            placeholder="Enter patient name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- UNITS -->
+
+                    <div class="form-group">
+
+                        <label for="units">
+
+                            🩸 Units Required
+
+                        </label>
+
+                        <input
+                            type="number"
+                            id="units"
+                            min="1"
+                            max="20"
+                            placeholder="Example: 2"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- HOSPITAL -->
+
+                <div class="form-group">
+
+                    <label for="hospital">
+
+                        🏥 Hospital Name
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="hospital"
+                        placeholder="Enter hospital name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="city">
+
+                            📍 City / Location
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            placeholder="Example: Ghaziabad"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="contact">
+
+                            📞 Contact Number
+
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="contact"
+                            placeholder="Enter contact number"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRIORITY -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        🚨 Emergency Priority
+
+                    </label>
+
+
+                    <div class="priority-container">
+
+
+                        <label class="priority-option critical">
+
+                            <input
+                                type="radio"
+                                name="priority"
+                                value="Critical"
+                                required
+                            >
+
+                            <div>
+
+                                <strong>🔴 Critical</strong>
+
+                                <span>
+                                    Required immediately
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="priority-option urgent">
+
+                            <input
+                                type="radio"
+                                name="priority"
+                                value="Urgent"
+                            >
+
+                            <div>
+
+                                <strong>🟠 Urgent</strong>
+
+                                <span>
+                                    Required within hours
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="priority-option normal">
+
+                            <input
+                                type="radio"
+                                name="priority"
+                                value="Normal"
+                            >
+
+                            <div>
+
+                                <strong>🟢 Normal</strong>
+
+                                <span>
+                                    Planned requirement
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- REQUIRED TIME -->
+
+                <div class="form-group">
+
+                    <label for="requiredTime">
+
+                        ⏰ Required By
+
+                    </label>
+
+                    <input
+                        type="datetime-local"
+                        id="requiredTime"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- NOTES -->
+
+                <div class="form-group">
+
+                    <label for="notes">
+
+                        📝 Additional Information
+
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        rows="4"
+                        placeholder="Add any important details..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+
+                    🚨 Create Emergency Request
+
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+        <!-- INFO SIDEBAR -->
+
+        <aside class="info-section">
+
+            <div class="info-card">
+
+                <h3>🤖 LifeLink Smart Matching</h3>
+
+                <p>
+                    Your request can be prepared for compatible donor
+                    matching based on blood group and emergency details.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>🩸 Blood Compatibility</h3>
+
+                <p>
+                    LifeLink can identify potentially compatible donor
+                    blood groups for the requested blood type.
+                </p>
+
+            </div>
+
+
+            <div class="info-card emergency-info">
+
+                <h3>🚨 Emergency Safety</h3>
+
+                <p>
+                    LifeLink does not replace emergency medical services.
+                    Contact your nearest hospital immediately during a
+                    life-threatening emergency.
+                </p>
+
+            </div>
+
+        </aside>
+
+
+    </main>
+
+
+    <!-- RESULT SECTION -->
+
+    <section
+        id="resultSection"
+        class="result-section hidden"
+    >
+
+
+        <div class="result-card">
+
+
+            <div class="result-header">
+
+                <div>
+
+                    <span class="status-dot"></span>
+
+                    <span>ACTIVE EMERGENCY REQUEST</span>
+
+                </div>
+
+                <span id="requestPriority"></span>
+
+            </div>
+
+
+            <h2 id="resultTitle">
+
+                Emergency Request Created
+
+            </h2>
+
+
+            <div class="blood-display">
+
+                <span id="resultBlood">
+
+                    O+
+
+                </span>
+
+            </div>
+
+
+            <div class="result-grid">
+
+
+                <div class="result-item">
+
+                    <span>👤 Patient</span>
+
+                    <strong id="resultPatient"></strong>
+
+                </div>
+
+
+                <div class="result-item">
+
+                    <span>🏥 Hospital</span>
+
+                    <strong id="resultHospital"></strong>
+
+                </div>
+
+
+                <div class="result-item">
+
+                    <span>📍 Location</span>
+
+                    <strong id="resultCity"></strong>
+
+                </div>
+
+
+                <div class="result-item">
+
+                    <span>🩸 Units</span>
+
+                    <strong id="resultUnits"></strong>
+
+                </div>
+
+
+                <div class="result-item">
+
+                    <span>⏰ Required By</span>
+
+                    <strong id="resultTime"></strong>
+
+                </div>
+
+
+                <div class="result-item">
+
+                    <span>📞 Contact</span>
+
+                    <strong id="resultContact"></strong>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- COUNTDOWN -->
+
+            <div class="countdown-card">
+
+                <p>⏳ Time Remaining</p>
+
+                <h2 id="countdown">
+
+                    Calculating...
+
+                </h2>
+
+            </div>
+
+
+            <!-- COMPATIBILITY -->
+
+            <div class="compatibility-card">
+
+                <h3>
+                    🩸 Potential Compatible Donor Groups
+                </h3>
+
+                <div
+                    id="compatibleGroups"
+                    class="blood-groups"
+                ></div>
+
+            </div>
+
+
+            <!-- AI ANALYSIS -->
+
+            <div class="ai-analysis">
+
+                <h3>
+                    🤖 LifeLink Emergency Analysis
+                </h3>
+
+                <p id="aiAnalysis"></p>
+
+            </div>
+
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="action-buttons">
+
+
+                <button
+                    id="findDonorsBtn"
+                    class="primary-action"
+                >
+
+                    🔍 Find Compatible Donors
+
+                </button>
+
+
+                <button
+                    id="directionsBtn"
+                    class="secondary-action"
+                >
+
+                    🗺️ Get Directions
+
+                </button>
+
+
+                <button
+                    id="shareBtn"
+                    class="secondary-action"
+                >
+
+                    📤 Share Request
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <script src="donor-matching.js"></script>
+
+    <script src="emergency-request.js"></script>
+
+</body>
+
+</html>
