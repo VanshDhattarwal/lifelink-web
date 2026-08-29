@@ -1,334 +1,653 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Find Blood | LifeLink</title>
+
     <link rel="stylesheet" href="findblood.css">
-
-
-
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
 </head>
+
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
+    <!-- ================= NAVBAR ================= -->
 
-<header>
+    <header>
 
-    <nav class="navbar">
+        <nav class="navbar">
 
-        <div class="logo">
-            🩸 <span>LifeLink</span>
+            <div class="logo">
+                🩸 <span>LifeLink</span>
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li>
+                    <a href="findblood.html" class="active">
+                        Find Blood
+                    </a>
+                </li>
+
+                <li>
+                    <a href="becadonor.html">
+                        Become a Donor
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#emergency">
+                        Emergency Request
+                    </a>
+                </li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="find-hero">
+
+        <div class="hero-content">
+
+            <span class="ai-badge">
+                🧠 AI-POWERED SMART MATCHING
+            </span>
+
+            <h1>
+                Find the Best Blood Donor Match
+            </h1>
+
+            <p>
+                LifeLink intelligently prioritizes compatible donors
+                based on blood compatibility, distance, availability
+                and donation eligibility.
+            </p>
+
         </div>
 
-        <ul class="nav-links">
+    </section>
 
-            <li><a href="index.html">Home</a></li>
-            <li><a href="findblood.html" class="active">Find Blood</a></li>
-            <li><a href="becadonor.html">Become a Donor</a></li>
-            <li><a href="#">Emergency Request</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
 
-        </ul>
+    <!-- ================= SMART SEARCH ================= -->
 
-    </nav>
+    <section class="search-section">
 
-</header>
+        <div class="search-heading">
 
-<!-- ================= HERO ================= -->
+            <h2>🩸 Smart Donor Matching</h2>
 
-<section class="find-hero">
+            <p>
+                Enter the emergency details and LifeLink will rank
+                the best potential donor matches.
+            </p>
 
-    <div class="hero-content">
+        </div>
 
-        <h1>Find Blood Donors Near You</h1>
+
+        <form class="search-form" id="donorSearchForm">
+
+
+            <!-- Blood Group -->
+
+            <label for="bloodGroup">
+                Blood Group Required *
+            </label>
+
+            <select id="bloodGroup" required>
+
+                <option value="">
+                    Select Blood Group
+                </option>
+
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+
+            </select>
+
+
+            <!-- State -->
+
+            <label for="state">
+                State *
+            </label>
+
+            <input
+                type="text"
+                id="state"
+                placeholder="Example: Uttar Pradesh"
+                required
+            >
+
+
+            <!-- City -->
+
+            <label for="city">
+                City *
+            </label>
+
+            <input
+                type="text"
+                id="city"
+                placeholder="Example: Ghaziabad"
+                required
+            >
+
+
+            <!-- Area -->
+
+            <label for="area">
+                Area / Locality
+            </label>
+
+            <input
+                type="text"
+                id="area"
+                placeholder="Example: Indirapuram"
+            >
+
+
+            <!-- Search Radius -->
+
+            <label for="radius">
+                Search Radius
+            </label>
+
+            <select id="radius">
+
+                <option value="5">
+                    5 KM
+                </option>
+
+                <option value="10" selected>
+                    10 KM
+                </option>
+
+                <option value="20">
+                    20 KM
+                </option>
+
+                <option value="50">
+                    50 KM
+                </option>
+
+            </select>
+
+
+            <!-- Emergency Priority -->
+
+            <label for="urgency">
+                Emergency Priority *
+            </label>
+
+            <select id="urgency" required>
+
+                <option value="normal">
+                    🟢 Normal
+                </option>
+
+                <option value="high">
+                    🟠 High Priority
+                </option>
+
+                <option value="critical">
+                    🔴 Critical Emergency
+                </option>
+
+            </select>
+
+
+            <!-- Required Time -->
+
+            <label for="requiredTime">
+                Blood Required Within
+            </label>
+
+            <select id="requiredTime">
+
+                <option value="6">
+                    Within 6 Hours
+                </option>
+
+                <option value="3">
+                    Within 3 Hours
+                </option>
+
+                <option value="1">
+                    Within 1 Hour
+                </option>
+
+                <option value="24">
+                    Within 24 Hours
+                </option>
+
+            </select>
+
+
+            <button type="submit" class="smart-search-btn">
+
+                🧠 Find Smart Matches
+
+            </button>
+
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= MATCHING STATUS ================= -->
+
+    <section
+        class="matching-status"
+        id="matchingStatus"
+        style="display: none;"
+    >
+
+        <div class="matching-loader">
+
+            <div class="pulse-circle">
+                🩸
+            </div>
+
+            <div>
+
+                <h3>
+                    LifeLink Smart Matching Engine
+                </h3>
+
+                <p id="matchingText">
+
+                    Analyzing compatible donors...
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RESULTS ================= -->
+
+    <section
+        class="donors smart-results"
+        id="resultsSection"
+    >
+
+        <div class="results-header">
+
+            <div>
+
+                <h2>
+                    🧠 Smart Donor Matches
+                </h2>
+
+                <p id="resultsSummary">
+
+                    Search for donors to see intelligent matches.
+
+                </p>
+
+            </div>
+
+            <div
+                class="emergency-status"
+                id="emergencyStatus"
+            >
+
+                Ready
+
+            </div>
+
+        </div>
+
+
+        <!-- Match Statistics -->
+
+        <div
+            class="match-statistics"
+            id="matchStatistics"
+        >
+
+            <div class="stat-card">
+
+                <span>🩸</span>
+
+                <div>
+
+                    <strong id="totalMatches">
+                        0
+                    </strong>
+
+                    <p>Compatible Matches</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>🏆</span>
+
+                <div>
+
+                    <strong id="bestScore">
+                        0%
+                    </strong>
+
+                    <p>Best Match Score</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>📍</span>
+
+                <div>
+
+                    <strong id="nearestDistance">
+                        --
+                    </strong>
+
+                    <p>Nearest Eligible Donor</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Dynamic Results -->
+
+        <div
+            class="donor-container"
+            id="donorResults"
+        >
+
+            <div class="empty-results">
+
+                <div class="empty-icon">
+                    🩸
+                </div>
+
+                <h3>
+                    Ready to Find Donors
+                </h3>
+
+                <p>
+                    Enter blood requirement details above to find
+                    intelligently ranked donor matches.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Demo Disclaimer -->
+
+        <div class="demo-disclaimer">
+
+            ⚠️ Demo Prototype:
+            Donor information shown in this prototype is simulated
+            for demonstration purposes. Real donor contact,
+            verification and notification systems require secure
+            backend infrastructure and consent.
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EMERGENCY ================= -->
+
+    <section
+        class="emergency"
+        id="emergency"
+    >
+
+        <h2>
+            🚨 Can't Find a Donor?
+        </h2>
 
         <p>
 
-            Search verified blood donors based on blood group and
-            location. Every second matters during an emergency.
+            Create a priority emergency blood request and LifeLink
+            will prepare the request details for compatible donor matching.
 
         </p>
 
+
+        <button
+            class="request-btn"
+            id="emergencyRequestBtn"
+        >
+
+            🚑 Create Emergency Request
+
+        </button>
+
+    </section>
+
+
+    <!-- ================= EMERGENCY MODAL ================= -->
+
+    <div
+        class="emergency-modal"
+        id="emergencyModal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-modal"
+                id="closeModal"
+            >
+
+                ×
+
+            </button>
+
+
+            <div class="modal-icon">
+                🚨
+            </div>
+
+            <h2>
+                Emergency Blood Request Created
+            </h2>
+
+            <p id="emergencyMessage">
+
+                Your emergency request is being prepared.
+
+            </p>
+
+
+            <div class="emergency-details">
+
+                <p>
+                    <strong>Blood Group:</strong>
+
+                    <span id="modalBloodGroup">
+                        --
+                    </span>
+                </p>
+
+
+                <p>
+                    <strong>Location:</strong>
+
+                    <span id="modalLocation">
+                        --
+                    </span>
+                </p>
+
+
+                <p>
+                    <strong>Priority:</strong>
+
+                    <span id="modalPriority">
+                        --
+                    </span>
+                </p>
+
+            </div>
+
+
+            <button
+                class="modal-confirm-btn"
+                id="closeEmergencyModal"
+            >
+
+                Continue
+
+            </button>
+
+
+            <p class="modal-warning">
+
+                ⚠️ Demo simulation only. No real emergency alerts
+                are sent by this prototype.
+
+            </p>
+
+        </div>
+
     </div>
 
-</section>
 
-<!-- ================= SEARCH ================= -->
+    <!-- ================= FACTS ================= -->
 
-<section class="search-section">
+    <section class="facts">
 
-<h2>Search Blood Donors</h2>
+        <h2>Blood Donation Facts</h2>
 
-<form class="search-form">
 
-<label>Blood Group *</label>
+        <div class="facts-grid">
 
-<select required>
 
-<option>Select Blood Group</option>
+            <div class="fact-card">
 
-<option>A+</option>
-<option>A-</option>
-<option>B+</option>
-<option>B-</option>
-<option>AB+</option>
-<option>AB-</option>
-<option>O+</option>
-<option>O-</option>
+                <h3>
+                    ❤️ Save Lives
+                </h3>
 
-</select>
+                <p>
+                    One donation may help multiple patients depending
+                    on how blood components are used.
+                </p>
 
-<label>State *</label>
+            </div>
 
-<input type="text" placeholder="Enter State">
 
-<label>City *</label>
+            <div class="fact-card">
 
-<input type="text" placeholder="Enter City">
+                <h3>
+                    🩸 Blood Can't Be Manufactured
+                </h3>
 
-<label>Area / Locality</label>
+                <p>
+                    Blood availability depends on voluntary donors
+                    and properly managed blood services.
+                </p>
 
-<input type="text" placeholder="Enter Area">
+            </div>
 
-<label>Search Radius</label>
 
-<select>
+            <div class="fact-card">
 
-<option>5 KM</option>
-<option>10 KM</option>
-<option>20 KM</option>
-<option>50 KM</option>
+                <h3>
+                    🚑 Emergency Need
+                </h3>
 
-</select>
+                <p>
+                    Hospitals may require blood urgently for trauma,
+                    surgery and other medical situations.
+                </p>
 
-<button type="submit">
+            </div>
 
-🔍 Search Donors
 
-</button>
+            <div class="fact-card">
 
-</form>
+                <h3>
+                    💖 Be Someone's Hero
+                </h3>
 
-</section>
+                <p>
+                    Becoming an eligible donor can potentially help
+                    patients during emergencies.
+                </p>
 
-<!-- ================= DONORS ================= -->
+            </div>
 
-<section class="donors">
 
-<h2>Available Donors</h2>
+        </div>
 
-<div class="donor-container">
+    </section>
 
-<div class="donor-card">
 
-<h3>🩸 O+</h3>
+    <!-- ================= FOOTER ================= -->
 
-<h4>Rahul Sharma</h4>
+    <footer>
 
-<p>📍 Ghaziabad</p>
+        <h2>
+            🩸 LifeLink
+        </h2>
 
-<p>📞 +91 XXXXX XXXXX</p>
+        <p>
+            Connecting potential donors with emergency blood needs.
+        </p>
 
-<p>🟢 Available</p>
+        <p>
+            © 2026 LifeLink. All Rights Reserved.
+        </p>
 
-<button>Contact Donor</button>
+    </footer>
 
-</div>
 
-<div class="donor-card">
+    <!-- ================= JAVASCRIPT ================= -->
 
-<h3>🩸 A+</h3>
-
-<h4>Priya Verma</h4>
-
-<p>📍 Noida</p>
-
-<p>📞 +91 XXXXX XXXXX</p>
-
-<p>🟢 Available</p>
-
-<button>Contact Donor</button>
-
-</div>
-
-<div class="donor-card">
-
-<h3>🩸 B+</h3>
-
-<h4>Aman Singh</h4>
-
-<p>📍 Delhi</p>
-
-<p>📞 +91 XXXXX XXXXX</p>
-
-<p>🟢 Available</p>
-
-<button>Contact Donor</button>
-
-</div>
-
-<div class="donor-card">
-
-<h3>🩸 AB+</h3>
-
-<h4>Sneha Gupta</h4>
-
-<p>📍 Faridabad</p>
-
-<p>📞 +91 XXXXX XXXXX</p>
-
-<p>🟢 Available</p>
-
-<button>Contact Donor</button>
-
-</div>
-
-<div class="donor-card">
-
-<h3>🩸 O-</h3>
-
-<h4>Vikas Kumar</h4>
-
-<p>📍 Greater Noida</p>
-
-<p>📞 +91 XXXXX XXXXX</p>
-
-<p>🟢 Available</p>
-
-<button>Contact Donor</button>
-
-</div>
-
-<div class="donor-card">
-
-<h3>🩸 A-</h3>
-
-<h4>Neha Sharma</h4>
-
-<p>📍 Meerut</p>
-
-<p>📞 +91 XXXXX XXXXX</p>
-
-<p>🟢 Available</p>
-
-<button>Contact Donor</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= EMERGENCY ================= -->
-
-<section class="emergency">
-
-<h2>Can't Find a Donor?</h2>
-
-<p>
-
-Create an emergency blood request and notify nearby donors.
-
-</p>
-
-<a href="#" class="request-btn">
-
-🚑 Request Blood Now
-
-</a>
-
-</section>
-
-<!-- ================= FACTS ================= -->
-
-<section class="facts">
-
-<h2>Blood Donation Facts</h2>
-
-<div class="facts-grid">
-
-<div class="fact-card">
-
-<h3>❤️ Save Lives</h3>
-
-<p>
-
-One blood donation can save up to three lives.
-
-</p>
-
-</div>
-
-<div class="fact-card">
-
-<h3>🩸 Blood Can't Be Manufactured</h3>
-
-<p>
-
-Blood is only available because generous people donate it.
-
-</p>
-
-</div>
-
-<div class="fact-card">
-
-<h3>🚑 Emergency Need</h3>
-
-<p>
-
-Many hospitals require blood every day for surgeries and trauma care.
-
-</p>
-
-</div>
-
-<div class="fact-card">
-
-<h3>💖 Be Someone's Hero</h3>
-
-<p>
-
-A few minutes of your time could make a life-changing difference.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<h2>🩸 LifeLink</h2>
-
-<p>
-
-Connecting donors with hospitals during emergencies.
-
-</p>
-
-<p>
-
-© 2026 LifeLink. All Rights Reserved.
-
-</p>
-
-</footer>
+    <script src="donor-matching.js"></script>
 
 </body>
+
 </html>
-```
